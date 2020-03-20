@@ -53,19 +53,26 @@ function base64_url_decode( $data ) {
             defaultLanguage: 'fr',
             fileRecordingsEnabled: false,
             liveStreamingEnabled: false,
+            enableCalendarIntegration: false,
             disableThirdPartyRequests: true,
             analytics: {disabled: true},
         },
         interfaceConfigOverwrite: {
             TOOLBAR_BUTTONS: ['microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen', 'fodeviceselection', 'hangup', 'profile', 'chat', 'recording', 'etherpad', 'sharedvideo', 'settings', 'raisehand', 'videoquality', 'shortcuts', 'tileview', 'download', 'help', 'mute-everyone'],
             SETTINGS_SECTIONS: ['devices', 'language'],
-            OPTIMAL_BROWSERS: [ 'chrome', 'chromium', 'firefox', 'nwjs', 'electron']
+            OPTIMAL_BROWSERS: [ 'chrome', 'chromium', 'firefox', 'nwjs', 'electron'],
+            SHOW_PROMOTIONAL_CLOSE_PAGE: false,
+            CLOSE_PAGE_GUEST_HINT: false
 	    },
         parentNode: document.querySelector('#meet')
     };
     const api = new JitsiMeetExternalAPI(domain, options);
     api.executeCommand('subject', '<?php echo $subject; ?>');
-    api.executeCommand('displayName', '<?php echo $name; ?>');
+<?php
+if($name!="") {
+    echo "    api.executeCommand('displayName', '".$name."');";
+}
+?>
     </script>
 </body>
 </html>
