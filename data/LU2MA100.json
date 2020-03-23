@@ -5,21 +5,22 @@
 "professors": {"Jeanne Decayeux": "prof", "Cécile Della Valle": "prof", "Johann Faouzi": "prof", "Jean-Merwan Godon": "prof", "Julien Guillod": "prof", "Mathieu Mari": "prof", "David Michel": "prof", "Gauthier Tallec": "prof", "Raphaël Zanella": "prof", "Valeria Banica": "guest"},
 
 "sessions": [
-  {"subject": "Chapitre 9", "group": "ISUP1", "start": "2020-03-20T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "ISUP2", "start": "2020-03-20T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Lu1", "start": "2020-03-23T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Lu2", "start": "2020-03-23T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Lu3", "start": "2020-03-23T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Ma1", "start": "2020-03-24T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Ma2", "start": "2020-03-24T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Ma3", "start": "2020-03-24T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Me1", "start": "2020-03-25T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Me2", "start": "2020-03-25T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Me3", "start": "2020-03-25T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Je1", "start": "2020-03-26T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 9", "group": "Je2", "start": "2020-03-26T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 10", "group": "ISUP1", "start": "2020-03-27T13:45:00+00:00", "duration":180},
-  {"subject": "Chapitre 10", "group": "ISUP2", "start": "2020-03-27T13:45:00+00:00", "duration":180}
+  {"subject": "Pour tester", "group": "test", "start": "2020-01-01 00:00", "duration":"INF"},
+  {"subject": "Chapitre 9", "group": "ISUP1", "start": "2020-03-20 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "ISUP2", "start": "2020-03-20 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Lu1", "start": "2020-03-23 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Lu2", "start": "2020-03-23 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Lu3", "start": "2020-03-23 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Ma1", "start": "2020-03-24 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Ma2", "start": "2020-03-24 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Ma3", "start": "2020-03-24 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Me1", "start": "2020-03-25 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Me2", "start": "2020-03-25 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Me3", "start": "2020-03-25 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Je1", "start": "2020-03-26 13:45", "duration":180},
+  {"subject": "Chapitre 9", "group": "Je2", "start": "2020-03-26 13:45", "duration":180},
+  {"subject": "Chapitre 10", "group": "ISUP1", "start": "2020-03-27 13:45", "duration":180},
+  {"subject": "Chapitre 10", "group": "ISUP2", "start": "2020-03-27 13:45", "duration":180}
 ]
 
 }
