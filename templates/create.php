@@ -1,5 +1,5 @@
 <?php
-    $title = 'Visio-conférence login';
+    $title = 'Visio-conférence - Création';
 
     ob_start();
 ?>
@@ -73,9 +73,9 @@
     <div id="successdiv" class="alert alert-success" role="alert" style="display:none;">
       <h4 class="alert-heading text-center">Visio-conférence crée avec succès</h4>
       <div class="row text-center">
-        <div class="col-lg-4 text-center"><a href="/?moodle" role="button" class="btn btn-warning text-decoration-none" target="_blank">Ajouter à Moodle</a></div>
-        <div class="col-lg-4 text-center"><button id="copy" type="button" class="btn btn-warning">Copier l'URL pour Moodle'</button></div>
-        <div class="col-lg-4 text-center"><a id="urltest" role="button" class="btn btn-warning text-decoration-none" target="_blank">Tester la conférence</a></div>
+        <div class="col-lg-4 mb-3"><a href="/?moodle" role="button" class="btn btn-warning text-decoration-none" target="_blank">Ajouter à Moodle</a></div>
+        <div class="col-lg-4 mb-3"><button id="copy" type="button" class="btn btn-warning">Copier l'URL pour Moodle'</button></div>
+        <div class="col-lg-4 mb-3"><a id="urltest" role="button" class="btn btn-warning text-decoration-none" target="_blank">Tester la conférence</a></div>
       </div>
       <p>L'URL pour Moodle est:</p>
       <input id="url" class="form-control">

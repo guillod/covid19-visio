@@ -1,5 +1,7 @@
 <?php
 
+use \Firebase\JWT\JWT;
+
 // error controller
 function error($error) {
     require "templates/error.php";
@@ -7,32 +9,28 @@ function error($error) {
 }
 
 //connect controller
-function action_connect($token) {
+function action_connect($jwt) {
     global $config;
-    $session = json_decode(decrypt($token), true);
-    //check required fields
-    if(!array_diff(["title","room","name","start","duration"], array_keys($session))) {
-        //check start and end time
-        if($session["duration"]=="INF") { $session["duration"] = INF; }
-        $start = strtotime($session["start"]) - $config["epsilon"]*60;
-        $end = $start + $session["duration"]*60 + 2*$config["epsilon"]*60;
-        $time = time();
+    // try to extract session
+    try {
+        $session = JWT::decode($jwt, $config['key'], array('HS256'));
+    } catch(\Firebase\JWT\BeforeValidException $e) {
         //too early
-        if ($time<$start) {
-            $msg = strftime("%A %d %B à %H:%M", $start);
-            $minutes = intdiv($start-$time,60);
-            error("Cette session n'est pas encore disponible: elle sera disponible dans {$minutes} minutes le {$msg}.");
-        } else if($time>$end) {
-            $msg = strftime("%A %d %B à %H:%M", $end);
-            error("Cette session n'est plus disponible: elle s'est terminée le {$msg}.");
-        // allow to connect
-        } else {
-            require "templates/connect.php";
-            exit();
-        }
-    // if required key not in $token
-    } else {
-        error("Token connect invalide");
+        $start = $e->payload["nbf"];
+        $msg = strftime("%A %d %B à %H:%M", $start);
+        $minutes = intdiv($start-time(),60);
+        error("Cette session n'est pas encore disponible: elle sera disponible dans {$minutes} minutes le {$msg}.");
+    } catch(\Firebase\JWT\ExpiredException $e) {
+        //too late
+        $msg = strftime("%A %d %B à %H:%M", $e->payload["exp"]);
+        error("Cette session n'est plus disponible: elle s'est terminée le {$msg}.");
+    } catch(Exception $e) {
+        error("Token connect23 invalide");
+    }
+    //check required fields and connect
+    if(!array_diff(["title","room","name"], array_keys($session))) {
+        require "templates/connect.php";
+        exit();
     }
 }
 
@@ -70,9 +68,9 @@ function action_submit($post) {
             $date = date_create_from_format('d/m/Y H:i', $start);
             $start = date_format($date, 'Y-m-d H:i');
             $session = ["id" => $id, "subject" => $subject, "start" => $start, "duration" => $duration];
-            $token = encrypt(json_encode($session));
-            $url = $config["host"]."?token=".$token;
-            $urltest = $url."&id=".$id."&name=Test Test";
+            $token = JWT::encode($session,$config['key']);
+            $url = $config["host"]."?session=".$token;
+            $urltest = "/?session=".$token."&id=".$id."&name=Test Test";
             echo json_encode(['success' => true, 'url' => $url, 'urltest' => $urltest]);
         } else {
             echo json_encode(['success' => false, 'error' => "Authentification invalide"]);
@@ -129,7 +127,7 @@ function action_list($id,$nid,$name) {
             $subject = $session["subject"];
             $date = ucfirst(strftime("%A %d %B", strtotime($session["start"])));
             $session['id'] = $id;
-            $session["connect"] = connect_token($session,$name);
+            $session["connect"] = connect_jwt($session,$name);
             //add to sessions
             $sessions[$subject][$date][] = $session;
         }
@@ -145,11 +143,12 @@ function action_list($id,$nid,$name) {
 
 //basic session controller
 function action_session($id,$name,$token) {
+    global $config;
     //sanitize
-    $id = filter_var($_GET['id'], FILTER_SANITIZE_STRING);
+    $id = filter_var($id, FILTER_SANITIZE_STRING);
     $id = preg_replace("/[^a-zA-Z0-9-]+/", "", $id);
-    $name = filter_var($_GET['name'], FILTER_SANITIZE_STRING);
-    $token = filter_var($_GET['token'], FILTER_SANITIZE_STRING);
+    $name = filter_var($name, FILTER_SANITIZE_STRING);
+    $token = filter_var($token, FILTER_SANITIZE_STRING);
 
     //remove last part of $id "-S2"
     try {
@@ -159,25 +158,30 @@ function action_session($id,$name,$token) {
     }
 
     // decrypt token
-    $session = json_decode(decrypt($token),true);
+    try {
+        $session = JWT::decode($token, $config['key'], array('HS256'));
+    } catch(Exception $e) {
+        error("Session invalide");
+    }
     //check required fields
     if(!array_diff(["id","subject","start","duration"], array_keys($session)) and $id==$session["id"]) {
-        $session["connect"] = connect_token($session,$name);
+        $session["connect"] = connect_jwt($session,$name);
         $session["date"] = strftime("%A %d %B à %H:%M", strtotime($session["start"]));
         //display one session
         require "templates/session.php";
         exit();
     } else {
-        error("Token invalide");
+        error("Session invalide");
     }
 }
 
 //action home
 function action_home() {
+    global $config;
     // test session
     $test_session = ["id" => "LU2MAXXX", "subject" => "Cours test", "start" => 'now'.strftime("%Y-%m-%d %H:%M"), "duration" => "0"];
-    $test_token = encrypt(json_encode($test_session));
-    $test_url = "/?id=".$test_session['id']."&name=Test Test&token=".$test_token;
+    $test_token = JWT::encode($test_session,$config["key"]);
+    $test_url = "/?session=".$test_token."&id=".$test_session['id']."&name=Test Test";
     //display home
     require "templates/home.php";
     exit();

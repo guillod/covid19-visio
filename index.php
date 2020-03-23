@@ -4,6 +4,7 @@ setlocale(LC_TIME, "fr_CH.utf8");
 require "config.php";
 require "functions.php";
 require "controllers.php";
+require "JWT/load.php";
 
 //connect
 if(isset($_GET['connect'])) {
@@ -36,9 +37,9 @@ if(isset($_GET['id']) and isset($_GET['nid']) and isset($_GET['name'])) {
 }
 
 //basic session
-if(isset($_GET['token'])) {
+if(isset($_GET['session'])) {
     if(isset($_GET['id']) and isset($_GET['name'])) {
-        action_session($_GET['id'],$_GET['name'],$_GET['token']);
+        action_session($_GET['id'],$_GET['name'],$_GET['session']);
     } else {
         error("Moodle pas configuré correctement");
     }

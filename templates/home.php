@@ -27,7 +27,7 @@
         <li>Nom d'utilisateur repris de Moodle</li>
         <li>Micro et vidéo désactivés au démarrage</li>
         <li>Possibilité de partage d'écran ou de fenêtre</li>
-        <li>Chat publique</li>
+        <li>Chat publique et privé</li>
         <li>Fonctionalité <em>lever la main</em></li>
       </ul>
     </div>

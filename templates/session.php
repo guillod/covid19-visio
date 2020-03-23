@@ -7,7 +7,7 @@
     <div class="text-center">
       <a href="?connect=<?= $session['connect'] ?>" class="btn btn-lg btn-info"><?= $session["subject"] ?> : <?= $session["date"] ?></a>
 
-      <p class="mt-3 mb-1">Redirection en cours...</p>
+      <p class="mt-3 mb-1">Connexion en cours...</p>
       <div class="progress">
         <div class="progress-bar" role="progressbar" style="width:0%;"></div>
       </div>
