@@ -5,20 +5,21 @@
   <meta name=viewport content="width=device-width, initial-scale=1">
   <title><?= $session["title"]; ?></title>
   <meta name="description" content="Visio-conférence">
-  <script src='https://beta.meet.jit.si/external_api.js'></script>
+  <script src='https://meet.jit.si/external_api.js'></script>
 </head>
 
 <body>
     <div id="meet"></div>
 
     <script>
-    const domain = 'beta.meet.jit.si';
+    const domain = 'meet.jit.si';
     const options = {
         roomName: '<?= $session["room"] ?>',
         noSSL: false,
         configOverwrite: {
             startWithAudioMuted: true,
             startWithVideoMuted: true,
+            disableSuspendVideo: true,
             defaultLanguage: 'fr',
             fileRecordingsEnabled: false,
             liveStreamingEnabled: false,
@@ -27,11 +28,12 @@
             analytics: {disabled: true},
         },
         interfaceConfigOverwrite: {
-            TOOLBAR_BUTTONS: ['microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen', 'fodeviceselection', 'hangup', 'profile', 'chat', 'recording', 'etherpad', 'sharedvideo', 'settings', 'raisehand', 'videoquality', 'shortcuts', 'tileview', 'download', 'help', 'mute-everyone'],
+            TOOLBAR_BUTTONS: ['microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen', 'fodeviceselection', 'hangup', 'profile', 'chat', 'sharedvideo', 'settings', 'raisehand', 'videoquality', 'shortcuts', 'tileview', 'download', 'help', 'mute-everyone'],
             SETTINGS_SECTIONS: ['devices', 'language'],
             //OPTIMAL_BROWSERS: ['chrome', 'chromium', 'firefox'],
             SHOW_PROMOTIONAL_CLOSE_PAGE: false,
-            CLOSE_PAGE_GUEST_HINT: false
+            CLOSE_PAGE_GUEST_HINT: false,
+            AUTO_PIN_LATEST_SCREEN_SHARE: false
         },
         parentNode: document.querySelector('#meet')
     };

@@ -37,7 +37,7 @@
       <div class="form-group">
         <label for="start">Date et heure de début</label>
         <div class="input-group date" id="picker" data-target-input="nearest">
-          <input type="text" class="form-control form-control-lg datetimepicker-input" data-target="#picker" name="start" placeholder="13/03/2020 13:52" aria-describedby="date-help" required/>
+          <input type="text" class="form-control form-control-lg datetimepicker-input" data-target="#picker" name="start" placeholder="13/03/2020 13:45" aria-describedby="date-help" required/>
           <div class="input-group-append" data-target="#picker" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
