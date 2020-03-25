@@ -5,14 +5,14 @@
   <meta name=viewport content="width=device-width, initial-scale=1">
   <title><?= $session["title"]; ?></title>
   <meta name="description" content="Visio-conférence">
-  <script src='https://meet.jit.si/external_api.js'></script>
+  <script src='https://open.meet.switch.ch/external_api.js'></script>
 </head>
 
 <body>
     <div id="meet"></div>
 
     <script>
-    const domain = 'meet.jit.si';
+    const domain = 'open.meet.switch.ch';
     const options = {
         roomName: '<?= $session["room"] ?>',
         noSSL: false,
@@ -30,9 +30,14 @@
         interfaceConfigOverwrite: {
             TOOLBAR_BUTTONS: ['microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen', 'fodeviceselection', 'hangup', 'profile', 'chat', 'sharedvideo', 'settings', 'raisehand', 'videoquality', 'shortcuts', 'tileview', 'download', 'help', 'mute-everyone'],
             SETTINGS_SECTIONS: ['devices', 'language'],
-            //OPTIMAL_BROWSERS: ['chrome', 'chromium', 'firefox'],
+            OPTIMAL_BROWSERS: [ 'chrome', 'chromium', 'nwjs', 'electron' ],
+            SHOW_CHROME_EXTENSION_BANNER: false,
             SHOW_PROMOTIONAL_CLOSE_PAGE: false,
             CLOSE_PAGE_GUEST_HINT: false,
+            RANDOM_AVATAR_URL_PREFIX: false,
+            RANDOM_AVATAR_URL_SUFFIX: false,
+            DISABLE_FOCUS_INDICATOR: true,
+            DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
             AUTO_PIN_LATEST_SCREEN_SHARE: false
         },
         parentNode: document.querySelector('#meet')

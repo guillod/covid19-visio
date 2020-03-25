@@ -7,6 +7,7 @@
     <div style="font-size:120%;">
       <h3 class="mt-5 mb-3">Depuis un ordinateur :</h3>
       <ol>
+        <li>Préférer l'utilisation du navigateur Chrome ou Chromium</li>
         <li>Ouvrir le lien correspondant à la visio-conférence depuis Moodle.</li>
         <li>Après quelques secondes, il faut commencer par accepter le partage audio avec une fenêtre qui ressemble à cela :<br>
             <img class="mw-100 mx-auto d-block" src="fig/visio-allow.png"></li>
