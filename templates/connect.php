@@ -25,7 +25,7 @@
             liveStreamingEnabled: false,
             enableCalendarIntegration: false,
             disableThirdPartyRequests: true,
-            analytics: {disabled: true},
+            analytics: {disabled: true}
         },
         interfaceConfigOverwrite: {
             TOOLBAR_BUTTONS: ['microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen', 'fodeviceselection', 'hangup', 'profile', 'chat', 'sharedvideo', 'settings', 'raisehand', 'videoquality', 'shortcuts', 'tileview', 'download', 'help', 'mute-everyone'],
