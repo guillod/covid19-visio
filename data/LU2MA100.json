@@ -19,12 +19,11 @@
   {"subject": "Chapitre 9", "group": "Me3", "start": "2020-03-25 13:45", "duration":180},
   {"subject": "Chapitre 9", "group": "Je1", "start": "2020-03-26 13:45", "duration":180},
   {"subject": "Chapitre 9", "group": "Je2", "start": "2020-03-26 13:45", "duration":180},
-  {"subject": "Chapitre 10", "group": "ISUP1", "start": "2020-03-27 13:45", "duration":180},
-  {"subject": "Chapitre 10", "group": "ISUP2", "start": "2020-03-27 13:45", "duration":180},
+  {"subject": "Chapitre 10", "group": "ISUP", "start": "2020-03-27 13:45", "duration":180},
   {"subject": "Chapitre 10", "group": "Lu", "start": "2020-03-30 13:45", "duration":180},
   {"subject": "Chapitre 10", "group": "Ma", "start": "2020-03-31 13:45", "duration":180},
   {"subject": "Chapitre 10", "group": "Me", "start": "2020-04-01 13:45", "duration":180},
-  {"subject": "Chapitre 10", "group": "Je", "start": "2020-04-02 13:45", "duration":180},
+  {"subject": "Chapitre 10", "group": "Je", "start": "2020-04-02 13:45", "duration":180}
 ]
 
 }
