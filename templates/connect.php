@@ -5,14 +5,14 @@
   <meta name=viewport content="width=device-width, initial-scale=1">
   <title><?= $session["title"]; ?></title>
   <meta name="description" content="Visio-conférence">
-  <script src='https://open.meet.switch.ch/external_api.js'></script>
+  <script src='https://meet.jit.si/external_api.js'></script>
 </head>
 
 <body>
     <div id="meet"></div>
 
     <script>
-    const domain = 'open.meet.switch.ch';
+    const domain = 'meet.jit.si';
     const options = {
         roomName: '<?= $session["room"] ?>',
         noSSL: false,
