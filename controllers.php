@@ -25,7 +25,7 @@ function action_connect($jwt) {
         $msg = strftime("%A %d %B à %H:%M", $e->payload["exp"]);
         error("Cette session n'est plus disponible: elle s'est terminée le {$msg}.");
     } catch(Exception $e) {
-        error("Token connect23 invalide");
+        error("Token connect invalide");
     }
     //check required fields and connect
     if(!array_diff(["title","room","name"], array_keys($session))) {
@@ -35,7 +35,7 @@ function action_connect($jwt) {
 }
 
 //create controller
-function action_create($login) {
+function action_create() {
     require "templates/create.php";
     exit();
 }

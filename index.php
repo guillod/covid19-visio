@@ -13,7 +13,7 @@ if(isset($_GET['connect'])) {
 
 //create
 if(isset($_GET['create'])) {
-    action_create($config['login']);
+    action_create();
 }
 
 //moodle

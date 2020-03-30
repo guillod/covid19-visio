@@ -29,6 +29,7 @@
         <li>Possibilité de partage d'écran ou de fenêtre</li>
         <li>Chat publique et privé</li>
         <li>Fonctionalité <em>lever la main</em></li>
+        <li>Limité à 75 participants</li>
       </ul>
     </div>
 

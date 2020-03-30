@@ -19,11 +19,16 @@
   {"subject": "Chapitre 9", "group": "Me3", "start": "2020-03-25 13:45", "duration":180},
   {"subject": "Chapitre 9", "group": "Je1", "start": "2020-03-26 13:45", "duration":180},
   {"subject": "Chapitre 9", "group": "Je2", "start": "2020-03-26 13:45", "duration":180},
-  {"subject": "Chapitre 10", "group": "ISUP", "start": "2020-03-27 13:45", "duration":180},
-  {"subject": "Chapitre 10", "group": "Lu", "start": "2020-03-30 13:45", "duration":180},
-  {"subject": "Chapitre 10", "group": "Ma", "start": "2020-03-31 13:45", "duration":180},
-  {"subject": "Chapitre 10", "group": "Me", "start": "2020-04-01 13:45", "duration":180},
-  {"subject": "Chapitre 10", "group": "Je", "start": "2020-04-02 13:45", "duration":180}
+  {"subject": "Chapitre 10", "group": "ISUP : Johann Faouzi", "start": "2020-03-27 13:45", "duration":180},
+  {"subject": "Chapitre 10", "group": "Lundi : Jeanne Decayeux", "start": "2020-03-30 13:45", "duration":180},
+  {"subject": "Chapitre 10", "group": "Mardi : Raphaël Zanella", "start": "2020-03-31 13:45", "duration":180},
+  {"subject": "Chapitre 10", "group": "Mercredi : Cécile Della Valle", "start": "2020-04-01 13:45", "duration":180},
+  {"subject": "Chapitre 10", "group": "Jeudi : Julien Guillod", "start": "2020-04-02 13:45", "duration":180},
+  {"subject": "Chapitre 11", "group": "Lundi : Gauthier Tallec", "start": "2020-04-20 13:45", "duration":180},
+  {"subject": "Chapitre 11", "group": "Mardi : David Michel", "start": "2020-04-21 13:45", "duration":180},
+  {"subject": "Chapitre 11", "group": "Mercredi : Mathieu Mari", "start": "2020-04-22 13:45", "duration":180},
+  {"subject": "Chapitre 11", "group": "Jeudi : Raphaël Zanella", "start": "2020-04-23 13:45", "duration":180},
+  {"subject": "Chapitre 11", "group": "Vendredi : Johann Faouzi", "start": "2020-04-24 13:45", "duration":180}
 ]
 
 }
